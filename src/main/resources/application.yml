@@ -1,7 +1,7 @@
 spring:
   application:
     name: FlightBooking_API
-    ai:
+  ai:
       retry:
         max-attempts: 1
       openai:
