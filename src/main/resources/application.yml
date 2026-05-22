@@ -1,6 +1,16 @@
 spring:
   application:
     name: FlightBooking_API
+    ai:
+      retry:
+        max-attempts: 1
+      openai:
+        api-key: ${OPENAI_API_KEY}
+        chat:
+          options:
+            model: gpt-4o
+            max-tokens: 1024
+            temperature: 0.2
   datasource:
     url: jdbc:mysql://localhost:3306/flight_booking_db?createDatabaseIfNotExist=true&useSSL=true&serverTimezone=UTC
     username: root
@@ -21,7 +31,6 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
-
 app:
   cors:
     allowed-origins:
